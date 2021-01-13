@@ -9,9 +9,15 @@ public class ToNPow {
 
     public static void main(String[] args) {
 
-        System.out.println(is2nPow(1024));
+        //System.out.println(is2nPow(1024));
+        System.out.println(is2nPow2(1000));
     }
 
+    /**
+     * 循环计算
+     * @param digit
+     * @return
+     */
     private static boolean is2nPow(int digit) {
         boolean result = false;
 
@@ -26,5 +32,17 @@ public class ToNPow {
             digit = digit / 2;
         }
         return result;
+    }
+
+    /**
+     * 位运算
+     * @param digit
+     * @return
+     */
+    private static boolean is2nPow2(int digit) {
+        if ((digit & (digit -1)) == 0) {
+            return true;
+        }
+        return false;
     }
 }
